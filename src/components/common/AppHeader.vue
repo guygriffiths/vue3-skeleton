@@ -1,18 +1,15 @@
 <script setup lang="ts">
-import { inject, computed } from 'vue'
-import { labels, LabelsKey } from '../lib/labels'
+import { useLabels } from '../../lib/labels'
 
-const l = inject(
-	LabelsKey,
-	computed(() => labels.en)
-)
+const $l = useLabels()
+// console.log('testing', $l.title)
 </script>
 
 <template>
 	<header>
-		<div id="header-title">{{ l.title }}</div>
+		<div id="header-title">{{ $l.title }}</div>
 		<div id="header-menu">
-			<router-link :to="{ name: 'Main' }">{{ l.main }}</router-link>
+			<router-link :to="{ name: 'Main' }">{{ $l.main }}</router-link>
 		</div>
 	</header>
 </template>

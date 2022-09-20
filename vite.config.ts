@@ -1,19 +1,28 @@
-import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-const path = require('path')
+import path from 'path'
+import { defineConfig, loadEnv } from 'vite'
 
-// https://vitejs.dev/config/
-export default defineConfig(({ command }) => ({
-	resolve: {
-		alias: {
-			'@': path.resolve(__dirname, './src'),
+const ENV_PREFIX = 'X_'
+
+export default defineConfig(({ command, mode }) => {
+	process.env = { ...process.env, ...loadEnv(mode, process.cwd(), ENV_PREFIX) }
+	return {
+		build: {
+			outDir: './dist'
 		},
-	},
-	base: command === 'build' ? '/vue3-skeleton/' : '/',
-	plugins: [vue()],
-	css: {
-		preprocessorOptions: {
-			scss: {},
+		envPrefix: ENV_PREFIX,
+		resolve: {
+			alias: {
+				'@': path.resolve(__dirname, './src'),
+			},
 		},
-	},
-}))
+		// First option should be the final deploy point of the client
+		base: command === 'build' ? process.env.X_PUBLIC_PATH : '/',
+		plugins: [vue()],
+		css: {
+			preprocessorOptions: {
+				scss: {},
+			},
+		},
+	}
+})

@@ -2,7 +2,7 @@
 
 * {
 	box-sizing: border-box;
-	font-family: 'Open Sans';
+	font-family: 'Open Sans', Arial, Helvetica, sans-serif;
 	color: $textColor;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -28,6 +28,22 @@ select {
 	font-size: 1rem;
 	border-radius: 0.25rem;
 	margin-bottom: 0.5rem;
+}
+
+button {
+	font-size: 1rem;
+	background-color: $bgContrast;
+	color: $textColor;
+	border: 1px solid $primary;
+	border-radius: 0.5rem;
+	margin: 0.25rem;
+	padding: 0.25rem;
+	cursor: pointer;
+
+	&:hover {
+		background-color: $primary;
+		color: $bgContrast;
+	}
 }
 
 @keyframes fadeIn {

@@ -1,3 +1,3 @@
-// Globally-available types go here
+// Globally-available types should go here
 
-type Language = 'en' // | 'fr' | 'de' | 'es'...etc, etc
+type Language = 'en' //...etc, etc

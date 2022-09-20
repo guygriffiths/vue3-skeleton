@@ -1,9 +1,24 @@
 <script setup lang="ts">
+import { onMounted } from 'vue'
+import { useRoute } from 'vue-router'
+import { useLabels } from '../lib/labels'
+import { useStore } from '../store/main'
+
+const $l = useLabels()
+const store = useStore()
+
+const route = useRoute()
+
+onMounted(async () => {
+	console.log(import.meta.env)
+	console.log(route)
+})
 </script>
 
 <template>
 	<div class="main">
-		<h1>Main content goes here</h1>
+		<h1>{{ $l.mainTitle }}</h1>
+		<p>Information from the store: {{ store.value }}</p>
 	</div>
 </template>
 
@@ -11,12 +26,7 @@
 @import '@/assets/styles/scssVars.scss';
 
 .main {
-	max-height: calc(100vh - $headerHeight - $footerHeight - 2*$gap);
-	display: grid;
-	padding: 1rem;
-
-	h1 {
-		margin: 0;
-	}
+	display: flex;
+	flex-direction: column;
 }
 </style>

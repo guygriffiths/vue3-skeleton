@@ -1,19 +1,13 @@
 <script setup lang="ts">
-import { inject, computed } from 'vue'
-import { labels, LabelsKey } from '../lib/labels'
-import { store } from '../store'
-
-const l = inject(
-	LabelsKey,
-	computed(() => labels.en)
-)
+import { computed } from 'vue'
+import { langNames } from '../../lib/labels'
 
 const lang = computed({
 	get() {
-		return store.state.lang
+		return 'en'
 	},
-	set(value: Language) {
-		store.commit('setLanguage', value)
+	set(value: string) {
+		console.warn('Trying to set language - not supported yet')
 	},
 })
 </script>
@@ -21,7 +15,9 @@ const lang = computed({
 <template>
 	<div class="footer">
 		<div class="lang-select">
-			<label><input type="radio" v-model="lang" value="en" />English</label>
+			<label v-for="(langName, langVal) in langNames">
+				<input type="radio" v-model="lang" :value="langVal" />{{ langName }}
+			</label>
 		</div>
 	</div>
 </template>

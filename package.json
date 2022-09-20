@@ -1,35 +1,38 @@
 {
-	"name": "vue3-skeleton",
-	"version": "0.1.0",
-	"scripts": {
-		"dev": "vite",
-		"build": "vue-tsc --noEmit && vite build",
-		"preview": "vite preview",
-		"lint": "eslint --ext .js,.vue --ignore-path .gitignore --fix src",
-		"format": "prettier .  --write",
-		"deploy": "npm run build && rm -Rf docs/js docs/css && cp -r dist/* docs && git add docs"
-	},
-	"dependencies": {
-		"d3": "^7.3.0",
-		"vue": "^3.2.25",
-		"vue-router": "^4.0.13",
-		"vue3-loading-overlay": "^0.0.0",
-		"vuex": "^4.0.2"
-	},
-	"devDependencies": {
-		"@types/d3": "^7.1.0",
-		"@typescript-eslint/parser": "^5.9.0",
-		"@vitejs/plugin-vue": "^2.0.0",
-		"@vue-leaflet/vue-leaflet": "^0.6.1",
-		"date-fns": "^2.28.0",
-		"eslint": "^8.6.0",
-		"eslint-config-prettier": "^8.3.0",
-		"eslint-plugin-vue": "^8.2.0",
-		"prettier": "2.5.1",
-		"sass": "^1.45.0",
-		"sass-loader": "^12.4.0",
-		"typescript": "^4.4.4",
-		"vite": "^2.7.2",
-		"vue-tsc": "^0.29.8"
-	}
+  "name": "vue3-skeleton",
+  "version": "1.1.0",
+  "description": "Example Vue 3 App",
+  "scripts": {
+    "dev": "vite --config vite.config.ts",
+    "build": "vue-tsc --noEmit --project ./src/ && vite --config vite.config.ts build",
+    "test": "jest"
+  },
+  "author": "Guy Griffiths",
+  "license": "ISC",
+  "devDependencies": {
+    "@dsb-norge/vue-keycloak-js": "^2.1.5-beta",
+    "@types/d3": "^7.4.0",
+    "@types/js-cookie": "^3.0.2",
+    "@types/papaparse": "^5.3.2",
+    "@typescript-eslint/parser": "^5.9.0",
+    "@vitejs/plugin-vue": "^2.0.0",
+    "@vue-leaflet/vue-leaflet": "^0.6.1",
+    "d3": "^7.6.1",
+    "date-fns": "^2.28.0",
+    "eslint": "^8.6.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-vue": "^8.2.0",
+    "js-cookie": "^3.0.1",
+    "papaparse": "^5.3.2",
+    "pinia": "^2.0.22",
+    "prettier": "^2.5.1",
+    "sass": "^1.45.0",
+    "sass-loader": "^12.4.0",
+    "typescript": "^4.6.2",
+    "vite": "^2.8.6",
+    "vue": "^3.2.25",
+    "vue-router": "^4.0.13",
+    "vue-tsc": "^0.29.8",
+    "vue3-loading-overlay": "^0.0.0"
+  }
 }

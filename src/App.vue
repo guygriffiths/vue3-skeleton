@@ -1,18 +1,15 @@
 <script setup lang="ts">
-import { computed, onMounted, inject } from 'vue'
-import { useStore } from 'vuex'
-import { StoreKey } from './store'
+import { onMounted } from 'vue'
 import 'vue3-loading-overlay/dist/vue3-loading-overlay.css'
 import Loading from 'vue3-loading-overlay'
-import AppHeader from './components/AppHeader.vue'
-import AppFooter from './components/Footer.vue'
-import { labels, LabelsKey } from './lib/labels'
+import AppHeader from './components/common/AppHeader.vue'
+import AppFooter from './components/common/Footer.vue'
+import { useLabels } from './lib/labels'
 
-const l = inject(LabelsKey, computed(() => labels.en))
+const l = useLabels()
 
-const store = useStore(StoreKey)
-
-const isLoading = computed(() => store.getters.isLoading)
+// TODO Add store with loading count (if required)
+const isLoading = false
 
 onMounted(() => {
 	document.title = l.value.title
@@ -37,7 +34,7 @@ onMounted(() => {
 	max-height: 100vh;
 	display: grid;
 	grid-template-columns: 100%;
-	grid-template-rows: $headerHeight+$gap 1fr $footerHeight+$gap;
+	grid-template-rows: $headerHeight + $gap 1fr $footerHeight + $gap;
 	grid-template-areas: 'header' 'main' 'footer';
 
 	#loading {
@@ -53,6 +50,9 @@ onMounted(() => {
 
 	#main {
 		grid-area: main;
+		// Constrains certain badly-behaved elements
+		max-height: calc(100vh - $headerHeight - $footerHeight - 2 * $gap);
+		padding: 1rem;
 	}
 
 	#footer {
