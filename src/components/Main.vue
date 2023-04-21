@@ -3,6 +3,7 @@ import { onMounted } from 'vue'
 import { useRoute } from 'vue-router'
 import { useLabels } from '../lib/labels'
 import { useStore } from '../store/store'
+import Map from './Map.vue'
 
 const $l = useLabels()
 const store = useStore()
@@ -19,6 +20,7 @@ onMounted(async () => {
 	<div class="main">
 		<h1>{{ $l.mainTitle }}</h1>
 		<p>Information from the store: {{ store.value }}</p>
+		<Map></Map>
 	</div>
 </template>
 
