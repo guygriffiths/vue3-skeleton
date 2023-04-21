@@ -10,7 +10,6 @@
   "author": "Guy Griffiths",
   "license": "ISC",
   "devDependencies": {
-    "@dsb-norge/vue-keycloak-js": "^2.1.5-beta",
     "@types/d3": "^7.4.0",
     "@types/js-cookie": "^3.0.2",
     "@types/papaparse": "^5.3.2",
