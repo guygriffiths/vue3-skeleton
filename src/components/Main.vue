@@ -2,7 +2,7 @@
 import { onMounted } from 'vue'
 import { useRoute } from 'vue-router'
 import { useLabels } from '../lib/labels'
-import { useStore } from '../store/main'
+import { useStore } from '../store/store'
 
 const $l = useLabels()
 const store = useStore()
