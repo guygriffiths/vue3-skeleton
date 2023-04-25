@@ -2,9 +2,9 @@
 import { onMounted } from 'vue'
 import 'vue3-loading-overlay/dist/vue3-loading-overlay.css'
 import Loading from 'vue3-loading-overlay'
-import AppHeader from './components/common/AppHeader.vue'
-import AppFooter from './components/common/Footer.vue'
-import { useLabels } from './lib/labels'
+import AppHeader from '@/components/common/AppHeader.vue'
+import AppFooter from '@/components/common/Footer.vue'
+import { useLabels } from '@/lib/labels'
 
 const l = useLabels()
 

@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { onMounted } from 'vue'
 import { useRoute } from 'vue-router'
-import { useLabels } from '../lib/labels'
-import { useStore } from '../store/store'
+import { useLabels } from '@/lib/labels'
+import { useStore } from '@/store/store'
 import Map from './Map.vue'
 
 const $l = useLabels()

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useLabels } from '../../lib/labels'
+import { useLabels } from '@/lib/labels'
 
 const $l = useLabels()
 </script>

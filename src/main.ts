@@ -1,10 +1,10 @@
 import { createPinia } from 'pinia'
 import { createApp } from 'vue'
-import App from './App.vue'
-import './assets/styles/main.scss'
-import { createI18n } from './lib/labels'
-import router from './router'
-import { useStore } from './store/store'
+import App from '@/App.vue'
+import '@/assets/styles/main.scss'
+import { createI18n } from '@/lib/labels'
+import router from '@/router'
+import { useStore } from '@/store/store'
 
 const app = createApp(App)
 const pinia = createPinia()

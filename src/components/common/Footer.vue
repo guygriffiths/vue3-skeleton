@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import { langNames } from '../../lib/labels'
+import { langNames } from '@/lib/labels'
 
 const lang = computed({
 	get() {
