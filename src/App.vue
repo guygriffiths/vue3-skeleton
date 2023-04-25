@@ -5,11 +5,10 @@ import Loading from 'vue3-loading-overlay'
 import AppHeader from '@/components/common/AppHeader.vue'
 import AppFooter from '@/components/common/Footer.vue'
 import { useLabels } from '@/lib/labels'
+import { useStore } from '@/store/store'
 
 const l = useLabels()
-
-// TODO Add store with loading count (if required)
-const isLoading = false
+const store = useStore()
 
 onMounted(() => {
 	document.title = l.value.title
@@ -17,7 +16,7 @@ onMounted(() => {
 </script>
 
 <template>
-	<loading :active="isLoading" :isFullPage="true" id="loading"></loading>
+	<loading :active="store.isLoading" :isFullPage="true" id="loading"></loading>
 	<AppHeader id="header" />
 	<router-view id="main"></router-view>
 	<AppFooter id="footer" />
