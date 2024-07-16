@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import 'leaflet/dist/leaflet.css'
-import { onMounted, ref } from 'vue'
+import { onMounted, ref, Ref } from 'vue'
 import {
 	LMap,
 	LTileLayer,
 	LControlScale,
 	LControlZoom,
 } from '@vue-leaflet/vue-leaflet'
-import { LatLng } from 'leaflet'
+import { LatLng, Point } from 'leaflet'
 
 const mapOptions = {
 	zoomControl: false,
@@ -15,14 +15,14 @@ const mapOptions = {
 	zoomDelta: 1,
 	wheelPxPerZoomLevel: 240,
 }
-const centerPoint = ref(new LatLng(51, 0))
+const centerPoint: Ref<Point> = ref(new LatLng(51, 0) as unknown as Point)
 const zoom = ref(10)
 
 const bgLayer = {
-	name: 'OpenStreetMap Mapnik',
-	url: 'https://stamen-tiles-{s}.a.ssl.fastly.net/toner-lite/{z}/{x}/{y}{r}.png',
+	name: 'Stadia OSM Bright',
+	url: 'https://tiles.stadiamaps.com/tiles/osm_bright/{z}/{x}/{y}{r}.png',
 	attribution:
-		'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+		'&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors',
 }
 </script>
 
