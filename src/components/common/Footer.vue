@@ -23,7 +23,7 @@ const lang = computed({
 </template>
 
 <style lang="scss" scoped>
-@import '@/assets/styles/scssVars.scss';
+@use '@/assets/styles/scssVars.scss' as *;
 
 .footer {
 	padding-top: $gap;

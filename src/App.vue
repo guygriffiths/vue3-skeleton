@@ -23,8 +23,8 @@ onMounted(() => {
 </template>
 
 <style lang="scss">
-@import '@/assets/styles/main.scss';
-@import '@/assets/styles/scssVars.scss';
+@forward '@/assets/styles/main.scss';
+@use '@/assets/styles/scssVars.scss' as *;
 
 #app {
 	width: 100vw;

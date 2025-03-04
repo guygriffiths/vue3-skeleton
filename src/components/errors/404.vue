@@ -12,8 +12,6 @@ const $l = useLabels()
 </template>
 
 <style lang="scss" scoped>
-@import '@/assets/styles/scssVars.scss';
-
 .e404 {
 	display: flex;
 	flex-direction: column;

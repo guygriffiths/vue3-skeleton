@@ -15,7 +15,7 @@ const $l = useLabels()
 </template>
 
 <style scoped lang="scss">
-@import '@/assets/styles/scssVars.scss';
+@use '@/assets/styles/scssVars.scss' as *;
 
 header {
 	width: 100%;
